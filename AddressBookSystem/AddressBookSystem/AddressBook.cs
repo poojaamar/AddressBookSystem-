@@ -140,7 +140,37 @@ namespace AddressBookSystem
             }
 
         }
+        public void deleteContact() 
+        {
+            if (People.Count != 0)
+            {
+                Console.WriteLine("-------------------------------------------");
+                Console.WriteLine("Enter the first name you want to delete : ");
+                string deleteContact = Console.ReadLine(); 
+                for (int i = 0; i < People.Count; i++) 
+                {
+                    if (deleteContact.ToLower() == People[i].FirstName.ToLower()) 
+                    {
+                        People.RemoveAt(i); 
+                        Console.WriteLine("Contact is deleted.");
+
+                    }
+                    else 
+                    {
+                        Console.WriteLine("-------------------------------------------");
+                        Console.WriteLine("Enter a valid name.");
+                    }
+                }
+            }
+            else 
+            {
+                Console.WriteLine("-------------------------------------------");
+                Console.WriteLine("Address Book is empty.");
+            }
+        }
     }
 }
+    
+
 
 
